@@ -26,12 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         login.cpp \
-    organizer.cpp
+    organizer.cpp \
+    contacts.cpp
 
 HEADERS += \
         login.h \
-    organizer.h
+    organizer.h \
+    contacts.h
 
 FORMS += \
         login.ui \
-    organizer.ui
+    organizer.ui \
+    contacts.ui

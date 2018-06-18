@@ -17,8 +17,22 @@ class Login : public QMainWindow
 
 public:
     QSqlDatabase mydb;
-    void connClose();
-    bool connOpen();
+
+
+
+    bool connOpen(){
+        mydb = QSqlDatabase::addDatabase("QSQLITE");
+        mydb.setDatabaseName("D:/sqlite3/EmployeeInfo.db");
+
+        if(!mydb.open()){
+             qDebug()<<("Database is disconnected");
+             return false;
+        }
+        else if(mydb.open() ){
+             qDebug()<<("Database is connected");
+            return true;
+        }
+    }
 
 
 public:

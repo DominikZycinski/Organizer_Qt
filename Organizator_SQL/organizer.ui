@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Organizer</class>
  <widget class="QDialog" name="Organizer">
@@ -5,13 +6,49 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>744</width>
+    <height>341</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="label_sec_status">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>280</y>
+     <width>221</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QCalendarWidget" name="calendarWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>392</width>
+     <height>236</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_go_contact">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>10</y>
+     <width>291</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dodaj kontakt</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

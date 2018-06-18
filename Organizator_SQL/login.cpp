@@ -10,13 +10,13 @@ Login::Login(QWidget *parent) :
     QPixmap pix("C:/Users/Domin/OneDrive/Pulpit/organizer.png");
     ui->label_pic->setPixmap(pix);
 
-    mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("D:/sqlite3/EmployeeInfo.db");
+//    mydb = QSqlDatabase::addDatabase("QSQLITE");
+//    mydb.setDatabaseName("D:/sqlite3/EmployeeInfo.db");
 
-    if(!mydb.open()){
+    if(!connOpen()){
         ui->label->setText("Database is disconnected");
     }
-    else if(mydb.open() ){
+    else if(connOpen() ){
         ui->label->setText("Database is connected");
     }
 
@@ -34,14 +34,17 @@ void Login::on_pushButton_clicked()
     username= ui -> lineEdit_username ->text();
     password= ui -> lineEdit_password ->text();
 
-    if(!mydb.isOpen()){
+    if(!connOpen()){
         qDebug()<<"Failed to open the database";
                 return;
     }
 
+    connOpen();
     QSqlQuery qry;
+    qry.prepare("select * from emplee where username= '"+username +"' and password= '"+password+"'");
 
-    if(qry.exec("select * from emplee where username= '"+username +"' and password= '"+password+"'"))  {
+
+    if(qry.exec())  {
 
         int count=0;
         while(qry.next())
@@ -51,6 +54,7 @@ void Login::on_pushButton_clicked()
 
         if(count ==1){
             ui->label->setText("zalogowales sie");
+
             this -> hide();
             Organizer organizer;
             organizer.setModal(true);
