@@ -5,6 +5,8 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+#include "organizer.h"
+
 namespace Ui {
 class Login;
 }
@@ -17,6 +19,8 @@ public:
     QSqlDatabase mydb;
     void connClose();
     bool connOpen();
+
+
 public:
     explicit Login(QWidget *parent = 0);
     ~Login();

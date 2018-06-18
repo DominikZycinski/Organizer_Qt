@@ -43,7 +43,7 @@ void Login::on_pushButton_clicked()
 
     if(qry.exec("select * from emplee where username= '"+username +"' and password= '"+password+"'"))  {
 
-        int count;
+        int count=0;
         while(qry.next())
         {
             count++;
@@ -51,6 +51,11 @@ void Login::on_pushButton_clicked()
 
         if(count ==1){
             ui->label->setText("zalogowales sie");
+            this -> hide();
+            Organizer organizer;
+            organizer.setModal(true);
+            organizer.exec();
+
         }
         if(count <1){
         ui->label->setText(" nie zalogowales sie");
