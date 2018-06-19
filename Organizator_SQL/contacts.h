@@ -18,6 +18,12 @@ public:
 private slots:
     void on_pb_add_contact_clicked();
 
+    void on_pb_update_contact_clicked();
+
+    void on_pb_delete_contact_clicked();
+
+    void on_pb_load_contact_clicked();
+
 private:
     Ui::Contacts *ui;
 };

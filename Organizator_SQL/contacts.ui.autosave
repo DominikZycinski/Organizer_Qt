@@ -242,8 +242,8 @@
   <widget class="QPushButton" name="pb_delete_contact">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>330</y>
+     <x>480</x>
+     <y>280</y>
      <width>181</width>
      <height>28</height>
     </rect>
@@ -270,7 +270,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>7</pointsize>
+     <pointsize>9</pointsize>
     </font>
    </property>
    <attribute name="verticalHeaderMinimumSectionSize">
@@ -280,7 +280,7 @@
   <widget class="QPushButton" name="pb_load_contact">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>700</x>
      <y>280</y>
      <width>201</width>
      <height>28</height>
