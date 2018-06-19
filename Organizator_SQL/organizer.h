@@ -20,6 +20,8 @@ public:
 private slots:
     void on_pb_go_contact_clicked();
 
+    void on_pb_add_meet_clicked();
+
 private:
     Ui::Organizer *ui;
 };

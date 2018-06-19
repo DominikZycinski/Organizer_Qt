@@ -125,3 +125,54 @@ void Contacts::on_pb_load_contact_clicked()
     qDebug() <<(modal->rowCount());
 
 }
+
+void Contacts::on_pb_sort_name_clicked()
+{
+    Login conn;
+    QSqlQueryModel *modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery *qry = new QSqlQuery (conn.mydb);
+
+    qry -> prepare("select * from kontakty order by name");
+
+    qry->exec();
+    modal ->setQuery(*qry);
+    ui ->tableView->setModel(modal);
+
+    qDebug() <<(modal->rowCount());
+}
+
+void Contacts::on_pb_sort_surname_clicked()
+{
+    Login conn;
+    QSqlQueryModel *modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery *qry = new QSqlQuery (conn.mydb);
+
+    qry -> prepare("select * from kontakty order by surname");
+
+    qry->exec();
+    modal ->setQuery(*qry);
+    ui ->tableView->setModel(modal);
+
+    qDebug() <<(modal->rowCount());
+}
+
+void Contacts::on_pb_sort_company_clicked()
+{
+    Login conn;
+    QSqlQueryModel *modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery *qry = new QSqlQuery (conn.mydb);
+
+    qry -> prepare("select * from kontakty order by company");
+
+    qry->exec();
+    modal ->setQuery(*qry);
+    ui ->tableView->setModel(modal);
+
+    qDebug() <<(modal->rowCount());
+}

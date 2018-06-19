@@ -37,4 +37,5 @@ void Organizer::on_pb_add_meet_clicked()
     QDate data;
     data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
     ui->edit_date->setText(data.toString());
+    
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1083</width>
-    <height>447</height>
+    <width>963</width>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QLabel" name="label_add_contacts">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>20</y>
+     <x>100</x>
+     <y>10</y>
      <width>201</width>
      <height>41</height>
     </rect>
@@ -36,31 +36,11 @@
     <string>KONTAKTY</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_add_contact">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>280</y>
-     <width>181</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>DODAJ KONTAKT</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_connect">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>310</y>
+     <y>330</y>
      <width>301</width>
      <height>16</height>
     </rect>
@@ -219,83 +199,148 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pb_update_contact">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>280</y>
-     <width>251</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>ZAKTUALIZUJ KONTAKT</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_delete_contact">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>330</y>
-     <width>181</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>USUŃ KONTAKT</string>
-   </property>
-  </widget>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>320</x>
      <y>70</y>
-     <width>581</width>
+     <width>621</width>
      <height>192</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>7</pointsize>
+     <pointsize>9</pointsize>
     </font>
    </property>
    <attribute name="verticalHeaderMinimumSectionSize">
     <number>0</number>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pb_load_contact">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>10</x>
      <y>280</y>
-     <width>201</width>
-     <height>28</height>
+     <width>931</width>
+     <height>35</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item>
+     <widget class="QPushButton" name="pb_add_contact">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>DODAJ KONTAKT</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pb_delete_contact">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>USUŃ KONTAKT</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pb_load_contact">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>POKAŻ KONTAKTY</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pb_update_contact">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>ZAKTUALIZUJ KONTAKT</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>30</y>
+     <width>621</width>
+     <height>30</height>
+    </rect>
    </property>
-   <property name="text">
-    <string>POKAŻ KONTAKTY</string>
-   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item>
+     <widget class="QPushButton" name="pb_sort_name">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>SORTOWANIE PO IMIENIU</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pb_sort_surname">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>SORTOWANIE PO NAZWISKU</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pb_sort_company">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>SORTOWANIE PO FIRMIE</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

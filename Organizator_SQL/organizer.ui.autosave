@@ -52,8 +52,8 @@
   <widget class="QPushButton" name="pb_add_meet">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>20</y>
+     <x>420</x>
+     <y>220</y>
      <width>131</width>
      <height>28</height>
     </rect>
@@ -65,8 +65,8 @@
   <widget class="QTextEdit" name="edit_date">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>80</y>
+     <x>420</x>
+     <y>50</y>
      <width>401</width>
      <height>31</height>
     </rect>
@@ -76,13 +76,36 @@
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>50</y>
+     <y>20</y>
      <width>111</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>DATA SPOTKANIA</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_notes_meet">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>90</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Notatki do spotkania</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>120</y>
+     <width>401</width>
+     <height>87</height>
+    </rect>
    </property>
   </widget>
  </widget>

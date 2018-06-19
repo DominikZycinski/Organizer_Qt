@@ -24,6 +24,12 @@ private slots:
 
     void on_pb_load_contact_clicked();
 
+    void on_pb_sort_name_clicked();
+
+    void on_pb_sort_surname_clicked();
+
+    void on_pb_sort_company_clicked();
+
 private:
     Ui::Contacts *ui;
 };
