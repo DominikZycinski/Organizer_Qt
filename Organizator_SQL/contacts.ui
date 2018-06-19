@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>963</width>
-    <height>327</height>
+    <width>1378</width>
+    <height>351</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -216,6 +216,29 @@
    <attribute name="verticalHeaderMinimumSectionSize">
     <number>0</number>
    </attribute>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>70</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_load_listview">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>280</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">

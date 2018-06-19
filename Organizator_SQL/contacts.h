@@ -30,6 +30,10 @@ private slots:
 
     void on_pb_sort_company_clicked();
 
+    void on_pb_load_listview_clicked();
+
+    void on_tableView_activated(const QModelIndex &index);
+
 private:
     Ui::Contacts *ui;
 };

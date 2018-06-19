@@ -176,3 +176,25 @@ void Contacts::on_pb_sort_company_clicked()
 
     qDebug() <<(modal->rowCount());
 }
+
+void Contacts::on_pb_load_listview_clicked()
+{
+    Login conn;
+    QSqlQueryModel *modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery *qry = new QSqlQuery (conn.mydb);
+
+    qry -> prepare("select name from kontakty");
+
+    qry->exec();
+    modal ->setQuery(*qry);
+    ui ->listView->setModel(modal);
+
+    qDebug() <<(modal->rowCount());
+}
+
+void Contacts::on_tableView_activated(const QModelIndex &index)
+{
+
+}

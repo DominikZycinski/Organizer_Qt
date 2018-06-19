@@ -1,7 +1,7 @@
 #include "organizer.h"
 #include "ui_organizer.h"
 #include "login.h"
-
+#include <QMessageBox>
 Organizer::Organizer(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Organizer)
@@ -15,6 +15,20 @@ Organizer::Organizer(QWidget *parent) :
     else if(conn.connOpen() ){
         ui->label_sec_status->setText("Database2 is connected");
     }
+
+    QSqlQueryModel *modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery *qry = new QSqlQuery(conn.mydb);
+    qry->prepare("select surname from kontakty");
+
+    qry->exec();
+    modal->setQuery(*qry);
+    ui->comboBox ->setModel(modal);
+
+    QDate data;
+    data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
+    ui->lineEdit_date->setText(data.toString());
 }
 
 Organizer::~Organizer()
@@ -36,5 +50,30 @@ void Organizer::on_pb_add_meet_clicked()
 //    date = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy");
     QDate data;
     data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
-    ui->edit_date->setText(data.toString());
+    ui->lineEdit_date->setText(data.toString());
+
+
+    Login conn;
+    QString  uczestnik, data2, notatki;
+    uczestnik= ui -> comboBox ->currentText();
+    data2= ui -> lineEdit_date->text();
+    notatki= ui -> lineEdit_notes->text();
+
+    if(!conn.connOpen()){
+        qDebug()<<"Failed to open the database";
+                return;
+    }
+
+    conn.connOpen();
+    QSqlQuery qry;
+    qry.prepare("insert into spotkania ('Uczestnik Spotkania', 'Data Spotkania', Notatki) values ('"+uczestnik+"','"+data2+"','"+notatki+"')");
+//     qry.prepare("insert into kontakty(name, surname, phone, mail, company) values ('"+name+"','"+surname+"','"+phone+"','"+mail+"','"+company+"')");
+    if(qry.exec())  {
+            QMessageBox::critical(this, tr("Edit"), tr("Updated"));
+    }
+    else{
+        QMessageBox::critical(this, tr("error::"), qry.lastError().text());
+    }
+
+
 }
