@@ -22,6 +22,10 @@ private slots:
 
     void on_pb_add_meet_clicked();
 
+    void on_lineEdit_date_cursorPositionChanged(int arg1, int arg2);
+
+    void on_calendar_clicked(const QDate &date);
+
 private:
     Ui::Organizer *ui;
 };

@@ -77,3 +77,17 @@ void Organizer::on_pb_add_meet_clicked()
 
 
 }
+
+void Organizer::on_lineEdit_date_cursorPositionChanged(int arg1, int arg2)
+{
+    QDate data;
+    data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
+    ui->lineEdit_date->setText(data.toString());
+}
+
+void Organizer::on_calendar_clicked(const QDate &date)
+{
+    QDate data;
+    data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
+    ui->lineEdit_date->setText(data.toString());
+}

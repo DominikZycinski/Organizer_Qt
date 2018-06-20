@@ -27,14 +27,17 @@ SOURCES += \
         main.cpp \
         login.cpp \
     organizer.cpp \
-    contacts.cpp
+    contacts.cpp \
+    timetable.cpp
 
 HEADERS += \
         login.h \
     organizer.h \
-    contacts.h
+    contacts.h \
+    timetable.h
 
 FORMS += \
         login.ui \
     organizer.ui \
-    contacts.ui
+    contacts.ui \
+    timetable.ui

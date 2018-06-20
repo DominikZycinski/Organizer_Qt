@@ -22,16 +22,12 @@ private slots:
 
     void on_pb_delete_contact_clicked();
 
-    void on_pb_load_contact_clicked();
-
     void on_pb_sort_name_clicked();
 
     void on_pb_sort_surname_clicked();
 
     void on_pb_sort_company_clicked();
-
-    void on_pb_load_listview_clicked();
-
+    void load_contacts();
     void on_tableView_activated(const QModelIndex &index);
 
 private:
