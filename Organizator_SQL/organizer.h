@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "contacts.h"
-
+#include "timetable.h"
 namespace Ui {
 class Organizer;
 }
@@ -25,6 +25,10 @@ private slots:
     void on_lineEdit_date_cursorPositionChanged(int arg1, int arg2);
 
     void on_calendar_clicked(const QDate &date);
+
+    void on_pb_go_timetable_clicked();
+
+
 
 private:
     Ui::Organizer *ui;

@@ -22,7 +22,7 @@ Contacts::Contacts(QWidget *parent) :
     conn.connOpen();
     QSqlQuery *qry = new QSqlQuery (conn.mydb);
 
-    qry -> prepare("select * from kontakty");
+    qry -> prepare("select name, surname, phone, mail, company from kontakty");
 
     qry->exec();
     modal ->setQuery(*qry);
@@ -39,7 +39,7 @@ void Contacts:: load_contacts(){
     conn.connOpen();
     QSqlQuery *qry = new QSqlQuery (conn.mydb);
 
-    qry -> prepare("select * from kontakty");
+    qry -> prepare("select name, surname, phone, mail, company from kontakty");
 
     qry->exec();
     modal ->setQuery(*qry);
@@ -145,23 +145,6 @@ void Contacts::on_pb_delete_contact_clicked()
     load_contacts();
 }
 
-//void Contacts::on_pb_load_contact_clicked()
-//{
-//    Login conn;
-//    QSqlQueryModel *modal = new QSqlQueryModel();
-
-//    conn.connOpen();
-//    QSqlQuery *qry = new QSqlQuery (conn.mydb);
-
-//    qry -> prepare("select * from kontakty");
-
-//    qry->exec();
-//    modal ->setQuery(*qry);
-//    ui ->tableView->setModel(modal);
-
-//    qDebug() <<(modal->rowCount());
-
-//}
 
 void Contacts::on_pb_sort_name_clicked()
 {

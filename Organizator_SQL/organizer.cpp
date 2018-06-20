@@ -66,7 +66,7 @@ void Organizer::on_pb_add_meet_clicked()
 
     conn.connOpen();
     QSqlQuery qry;
-    qry.prepare("insert into spotkania ('Uczestnik Spotkania', 'Data Spotkania', Notatki) values ('"+uczestnik+"','"+data2+"','"+notatki+"')");
+    qry.prepare("insert into spotkania ('Uczestnik', 'Data', Notatki) values ('"+uczestnik+"','"+data2+"','"+notatki+"')");
 //     qry.prepare("insert into kontakty(name, surname, phone, mail, company) values ('"+name+"','"+surname+"','"+phone+"','"+mail+"','"+company+"')");
     if(qry.exec())  {
             QMessageBox::critical(this, tr("Edit"), tr("Updated"));
@@ -91,3 +91,18 @@ void Organizer::on_calendar_clicked(const QDate &date)
     data = QDate::fromString(ui->calendar->selectedDate().toString("dd-MM-yyyy"), "dd-MM-yyyy");
     ui->lineEdit_date->setText(data.toString());
 }
+
+void Organizer::on_pb_go_timetable_clicked()
+{
+    this -> hide();
+    Timetable timetable;
+    timetable.setModal(true);
+    timetable.exec();
+
+//    this -> hide();
+//    Contacts contacts;
+//    contacts.setModal(true);
+//    contacts.exec();
+}
+
+
